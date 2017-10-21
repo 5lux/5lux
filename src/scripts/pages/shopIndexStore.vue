@@ -1,71 +1,45 @@
 <template lang="html">
 	<div class="shopIndexStore">
+		<div class="shop-index-banner">
+			<mt-swipe :auto="4000">
+			  <mt-swipe-item>1</mt-swipe-item>
+			  <mt-swipe-item>2</mt-swipe-item>
+			  <mt-swipe-item>3</mt-swipe-item>
+			</mt-swipe>
+		</div>
+		<div class="shop-index-sort">
+			<ul>
+				<li>分类</li>
+				<li>专柜自提</li>
+				<li>会员特权</li>
+				<li>礼品</li>
+			</ul>
+		</div>
 		<div class="sisBanner">
 			
 		</div>
-		<ul>
-			<li></li>
-			<li></li>
-			<li></li>
-			<li></li>
-		</ul>
+		<div class="shProUL">
+			<ul>
+				<li></li>
+				<li></li>
+				<li></li>
+				<li></li>
+			</ul>
+		</div>
 		<div class="sisBtn"><p>查看所有旗舰店></p></div>
-		<fashion></fashion>
 	</div>
 </template>
 
 <script>
-	import fashion from './shopIndexFashion.vue';
+	import fashion from './ShopIndexFashion.vue';
+	import Vue from 'vue';
+	import { Swipe, SwipeItem } from 'mint-ui';
+
+	Vue.component(Swipe.name, Swipe);
+	Vue.component(SwipeItem.name, SwipeItem);
 	export default {
 		components: {
-		    fashion: fashion
+		    
 		}
 	}
 </script>
-
-<style lang="scss">
-	@charset "utf-8";
-	.shopIndexStore{
-		font-size: 31.25vw;
-		.sisBanner{
-			height: 1.7963em;
-			width: 100%;
-			background: gray;
-		}
-		ul{
-			width: 502px;
-			height: 121px;
-			margin-top: 6px;
-			background: white;
-			overflow-x: scroll;
-			li{
-				width: 121px;
-				height: 121px;
-				margin-right: 6px;
-				float: left;
-				background: yellow;
-			}
-			li:last-child{
-				margin: 0;
-			}
-		}
-		.sisBtn{
-			margin-bottom: 10px;
-			width: 100%;
-			height: 39px;
-			background: white;
-			padding-top: 7px;
-			p{
-				width: 135px;
-				height: 24px;
-				
-				background: #333;
-				color: white;
-				margin: 0 auto;
-				border-radius:3px ;
-				font-size: 16px;
-				text-align: center;
-			}
-		}
-	}
-</style>

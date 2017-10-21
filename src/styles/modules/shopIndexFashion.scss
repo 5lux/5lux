@@ -1,0 +1,70 @@
+
+.shopIndexStore{
+    font-size: 31.25vw;
+    .sisBanner{
+        height: 1.7963em;
+        width: 100%;
+        background: gray;
+    }
+    .shop-index-banner{
+        width: 100%;
+        height: 2.39rem;
+        font-size: 20px;
+    }
+    .shop-index-sort{
+        width: 100%;
+        height: .6827em;
+        background: yellow;
+        ul{
+            @include flexbox();
+            width: 100%;
+            height: .6827em;
+            li{
+                @include flex(1);
+                height: .6827em;
+                color: #7e8c8d;
+                font-size: .12rem;
+                text-align: center;
+            }
+        }
+    }
+    .shProUL{
+        width: 100%;
+        height: 121px;
+        margin-top: 6px;
+        background: white;
+        overflow: auto;
+        ul{
+            width: 502px;
+            overflow-x: scroll;
+            li{
+                width: 121px;
+                height: 121px;
+                margin-right: 6px;
+                float: left;
+                background: yellow;
+            }
+            li:last-child{
+                margin: 0;
+            }
+        }
+    }
+    .sisBtn{
+        margin-bottom: 10px;
+        width: 100%;
+        height: 39px;
+        background: white;
+        padding-top: 7px;
+        p{
+            width: 135px;
+            height: 24px;
+            
+            background: #333;
+            color: white;
+            margin: 0 auto;
+            border-radius:3px ;
+            font-size: 16px;
+            text-align: center;
+        }
+    }
+}

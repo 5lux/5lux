@@ -42,30 +42,15 @@ var public = {
   },
 
   // devtool 配置
-//devtool: 'source-map',
+  devtool: 'source-map',
 
-//	devServer: {
-//	    host: 'localhost',
-//	    port: 4000,
-//	    contentBase: __dirname + outputDir,
-//	    noInfo: true,
-//	    proxy: {
-//	      '/api': {
-//	        target: 'https://api.douban.com/',
-//	        changeOrigin: true,
-//	        pathRewrite: {
-//	          '^/api': ''
-//	        }
-//	      },
-//	      '/vip': {
-//	        target: 'http://localhost:9000/',
-//	        changeOrigin: true,
-//	        pathRewrite: {
-//	          '^/vip': ''
-//	        }
-//	      }
-//	    }
-//	 },
+  // 别名配置
+  resolve: {
+    alias: {
+      'vue$': 'vue/dist/vue.esm.js',
+      'styles': __dirname + '/src/styles'
+    }
+  },
 
   // 配置模块
   module: {
@@ -80,8 +65,8 @@ var public = {
           }
         ]
       },
-		
-		// 加载Vue 单文件组件
+
+      // 加载Vue 单文件组件
       {
         test: /\.vue$/,
         exclude: /node_modules/, // 排除node_modules下.js的解析
@@ -89,7 +74,7 @@ var public = {
           loader: 'vue-loader'
         }]
       },
-		
+
       // 加载scss
       {
         test: /\.scss$/,
@@ -101,8 +86,13 @@ var public = {
         //]
         // CSS抽离
           ExtractTextPlugin.extract({
-            fallback: 'style-loader',
-            use: ['css-loader', 'sass-loader']
+            fallback: 'vue-style-loader',
+            use: ['css-loader', 'sass-loader', {
+              loader: 'sass-resources-loader',
+              options: {
+                resources: [__dirname + '/src/styles/app.scss', __dirname + '/src/styles/modules/common.scss']
+              }
+            }]
           })
       },
 
@@ -120,7 +110,7 @@ var public = {
         test: /\.(png|jpe?g|gif|svg)(\?.*)?$/,
         loader: 'url-loader',
         options: {
-          limit: 1000,
+          limit: 10,
           name: 'media/images/[name].[ext]'
         }
       },
@@ -131,7 +121,7 @@ var public = {
         loader: 'url-loader',
         options: {
           limit: 10000,
-          name: 'media/mp4/[name].[ext]'
+          name: 'media/mp4/[name].[hash:7].[ext]'
         }
       },
 
@@ -140,7 +130,7 @@ var public = {
         test: /\.(woff2?|eot|ttf|otf)(\?.*)?$/,
         loader: 'url-loader',
         options: {
-          limit: 10000,
+          limit: 10,
           name: 'media/iconfont/[name].[ext]'
         }
       }
@@ -164,22 +154,35 @@ var public = {
       chunks: ['scripts/app']
     }),
 
-    // 代码压缩,不能同webserver一同使用
-//  new webpack.optimize.UglifyJsPlugin({
-//    compress: {
-//      warnings: false
-//    },
-//    output: {
-//      comments: false
-//    }
-//    
-//  }),
+    // 生成编译HTML(search.html)的插件的实例
+    // new HtmlWebpackPlugin({
+    //   template: './src/search.html',
+    //   filename: 'search.html',
+    //   chunks: ['scripts/search']
+    // }),
+
+    // 代码压缩
+    // new webpack.optimize.UglifyJsPlugin({
+    //   compress: {
+    //     warnings: false
+    //   },
+    //   output: {
+    //     comments: false
+    //   }
+    // }),
 
     // 自动在打开浏览器打开页面
     // new OpenBrowserPlugin({
     //   url: 'http://localhost:4000'
     // })
-  ]
+  ],
+
+  // externals
+  externals: {
+    'vue': 'window.Vue',
+    'vue-router': 'window.VueRouter',
+    'axios': 'window.axios'
+  }
 }
 
 var devserver = { // 配置webserver
@@ -207,7 +210,7 @@ var devserver = { // 配置webserver
   }
 }
 
-if (process.env.NODE_ENV==='dev') {
+if (process.env.NODE_ENV === 'dev') {
   module.exports = Object.assign({}, public, devserver)
 } else {
   module.exports = public

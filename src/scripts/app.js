@@ -1,13 +1,18 @@
-import Vue from 'vue/dist/vue'
+import Vue from 'vue'
 
-import Index from './pages/shopIndex.vue'
+import VueRouter from 'vue-router'
 
-import shop from './pages/shopIndexStore.vue';
+import "styles/app.scss"
+
+import routes from './routes.js'
+
+Vue.use(VueRouter)
+
+const router = new VueRouter({
+  routes,
+  linkActiveClass: 'active'
+})
 
 new Vue({
-  el: '#root',
-  components: {
-    Index: Index,
-    shop: shop
-  }
-})
+  router
+}).$mount('#root')
