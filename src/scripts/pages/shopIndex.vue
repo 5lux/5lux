@@ -1,14 +1,14 @@
 <template lang='html'>
 	<div class="shop-m-index">
-		<div class="shop-index-head">
+		<div class="shop-index-head" v-if="isShow">
 			
 		</div>
-		<section>
-			<div class="shop-index-nav">
-				<ul>
-					<router-link :to="{path: type.path}" v-for="type in types" tag='li'>{{type.name}}</router-link>
-				</ul>
-			</div>
+		<div class="shop-index-nav">
+			<ul>
+				<router-link :to="{path: type.path}" v-for="type in types" tag='li'>{{type.name}}</router-link>
+			</ul>
+		</div>
+		<section @scroll="handleScroll">
 			
 			<router-view></router-view>
 			
@@ -21,7 +21,7 @@
 
 <script>
 	import Vue from 'vue';
-	import VueRouter from 'vue-router'
+	import VueRouter from 'vue-router';
 	
 	import { Loadmore } from 'mint-ui';
 
@@ -29,7 +29,14 @@
 	export default {
 		data: function() {
 			return {
-			types: [{'name':'首页', 'path':'/'}, {'name':'箱包', 'path':'/shopBag'}, {'name':'美妆', 'path':'/shopBag'},{'name':'服装','path':'/shopBag'},{'name':'腕表','path':'/shopBag'},{'name':'配饰','path':'/shopBag'},{'name':'鞋靴','path':'/shopBag'},{'name':'母婴','path':'/'},{'name':'美酒','path':'/'},{'name':'美食','path':'/'},{'name':'家居','path':'/'},{'name':'电子','path':'/'},{'name':'办公','path':'/'}]
+			types: [{'name':'首页', 'path':'/shopIndexFashion'}, {'name':'箱包', 'path':'/shopBag'}, {'name':'美妆', 'path':'/shopBeauty'},{'name':'服装','path':'/shopClothes'},{'name':'腕表','path':'/shopWatch'},{'name':'配饰','path':'/shopOrnament'},{'name':'鞋靴','path':'/shopShoes'},{'name':'母婴','path':'/shopMaB'},{'name':'美酒','path':'/shopWine'},{'name':'美食','path':'/shopFood'},{'name':'家居','path':'/shopHouse'},{'name':'电子','path':'/shopElec'},{'name':'办公','path':'/shopOffice'}],
+			isShow: true
+			}
+		},
+		methods: {
+			handleScroll () {
+				var section = document.querySelector('section')
+			    this.isShow = section.scrollTop <= 0;
 			}
 		},
 		components: {
