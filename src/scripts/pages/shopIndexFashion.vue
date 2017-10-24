@@ -69,6 +69,38 @@
 				</li>
 			</ul>
 		</div>
+		<div class="flagshipStore" v-for="(value,index) in data.fashion_guide.list">
+			<h4 v-if="index==0">时尚指南</h4>
+			<h5 v-if="index==0">—— FLAGSHIP&nbsp;STORES</h5>
+			<a :href="value.ad_top.ad_link">
+				<img :src="value.ad_top.ad_code"/>
+			</a>
+			<div >
+				
+				<ul>
+					<li v-for="product in value.product_info">
+						<img :src="product.product_thumb"/>
+						<p>{{product.ad_subtitle}}</p>
+						<p>{{product.ad_title}}</p>
+					</li>
+					<li>
+						<img style="border:1px solid black" src="http://img550.5lux.com.cn/2017/05/05/pq/149398682373_160x160.png"/>
+					</li>
+				</ul>
+			</div>
+		</div>
+		<div class="fashionHot">
+			<h4>大家都在买</h4>
+			<h5>—— HOT&nbsp;SALES —— </h5>
+			<ul>
+				<li v-for="value in hot">
+					<img :src="value.product_img"/>
+					
+					<p>{{value.brand_name}}</p>
+					<p>¥{{value.product_price}}</p>
+				</li>
+			</ul>
+		</div>
 	</div>
 </template>
 
@@ -78,7 +110,8 @@
 		data(){
 			return {
 				dataList:[],
-				data: []
+				data: [],
+				hot: []
 			}
 		},
 		mounted() {
@@ -87,6 +120,10 @@
 		    	this.data = res.data.data
 		        const data = res.data.data.fashion_video.list
 		        this.dataList = data
+		    }),
+		   axios.get('http://api.restful.5lux.com.cn/shop/theirchose/?shop%2Ftheirchose=&page=1')
+		    .then((res)=>{
+		    	this.hot = res.data.data.theirchose
 		    })
 		}
 	}

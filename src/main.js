@@ -6,7 +6,7 @@ import router from './router'
 
 //import VueRouter from 'vue-router'
 
-import "./styles/app.scss"
+import "./styles/shopApp.scss"
 
 Vue.config.productionTip = false
 

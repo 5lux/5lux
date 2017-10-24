@@ -3,10 +3,9 @@ import Router from 'vue-router'
 import HelloWorld from '@/components/HelloWorld'
 
 import shopIndex from '../scripts/pages/ShopIndex.vue';
-import bag from '../scripts/pages/ShopBag.vue';
+import special from '../scripts/pages/ShopSpecial.vue';
 import Detail from '../scripts/pages/Detail.vue';
 import shopIndexStore from '../scripts/pages/ShopIndexStore.vue';
-import beauty from '../scripts/pages/ShopBeauty.vue';
 import page404 from '../scripts/pages/404.vue';
 
 Vue.use(Router)
@@ -23,13 +22,9 @@ export default new Router({
 				component: shopIndexStore
 			},
 			{
-				path: '/shopBag',
-				component: bag
+				path: '/shopSpecial',
+				component: special
 			},
-			{
-				path: '/shopBeauty',
-				component: beauty
-			}
 		]
 	},
 	{

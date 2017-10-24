@@ -133,7 +133,7 @@
 		    shopFashion
 		},
 		mounted() {
-		    axios.get('/abc')
+		    axios.get('http://api.restful.5lux.com.cn/shop/get_flagship_recommend')
 		    .then((res)=>{
 		        const data = res.data.data
 		        this.dataList = data
