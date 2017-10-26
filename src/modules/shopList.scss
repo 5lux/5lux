@@ -1,0 +1,71 @@
+.arriveBannerwrap{
+        
+        @include flex();
+        overflow: hidden;
+        overflow-y: scroll;
+        width:100%;
+        .arriveBanner{
+            width:100%;
+            height:auto;
+            .arrBanbox{
+                width:3rem;
+                height:430px;
+//              overflow: hidden;
+                margin: 0 auto;
+                @include border(0px 0px 1px 0px);
+                padding-top:20px;
+                .div1{
+                    width:3rem;
+                    height:3rem;
+                    img{
+                        width:100%;
+                        height:100%;
+                    }
+                }
+                .div2{
+                    height:42px;
+                    line-height:42px;
+                    font-size:18px;
+                    text-indent:10px;
+                }
+                .div3{
+                    height:18px;
+                    line-height:18px;
+                    font-size:14px;
+                    .dLeft{
+                        width:0.4rem;
+                        height:18px;
+                        font-size:14px;
+                        float:left;
+                        background:#9b885f;
+                        color:white;
+                        text-align: center;
+                        line-height:18px;
+                    }
+                    .dRight{
+                        width:2.4rem;
+                        height:18px;
+                        float:right;
+                        font-size:14px;
+                        line-height:18px;
+                        @include ellipsis(null,1);
+                    }
+                }
+                .div4{
+                    width:100%;
+                    height:30px;
+                    .spanLeft{
+                        float:left;
+                        height:40px;
+                        line-height:40px;
+                        color:#9b885f;
+                    }
+                    .spanRight{
+                        float:right;
+                        height:40px;
+                        line-height:40px;
+                    }
+                }
+            }
+        }
+    }
