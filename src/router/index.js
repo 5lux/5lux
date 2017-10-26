@@ -1,39 +1,59 @@
-import Vue from 'vue'
-import Router from 'vue-router'
-import HelloWorld from '@/components/HelloWorld'
-
-import shopIndex from '../scripts/pages/ShopIndex.vue';
-import special from '../scripts/pages/ShopSpecial.vue';
-import Detail from '../scripts/pages/Detail.vue';
-import shopIndexStore from '../scripts/pages/ShopIndexStore.vue';
-import page404 from '../scripts/pages/404.vue';
-
-Vue.use(Router)
-
-export default new Router({
+import Vue from 'vue';
+import VueRouter from "vue-router";
+import Index from "../App.vue";
+import myMall from "../components/myMall.vue";
+import myFaction from "../components/myFaction.vue";
+import myGoshop from "../components/myGoshop.vue";
+import Mine from "../components/Mine.vue";
+import myDetail from "../components/myDetail.vue";
+import myPosition from "../components/myPosition.vue";
+import Errorpage from "../components/Errorpage";
+import ShopIndexFashion from "../components/ShopIndexFashion.vue";
+import ShopSpecial from "../components/ShopSpecial.vue";
+Vue.use(VueRouter);
+export default new VueRouter({
   routes: [
     {
-		path: '/',
-		component: shopIndex,
-		redirect: '/shopIndexFashion',
-		children: [
-			{
-				path: '/shopIndexFashion',
-				component: shopIndexStore
-			},
-			{
-				path: '/shopSpecial',
-				component: special
-			},
-		]
-	},
-	{
-		path: '/detail',
-		component: Detail
-	},
-	{
-		path: '*',
-		component: page404
-	}
+			path:"/",
+			component:Index,
+			redirect:"/myPosition",
+			children:[
+				{
+					path:"/myPosition",
+					component:myPosition
+				},{
+					path:"/myMall",
+					component:myMall,
+					redirect:"/ShopIndexFashion",
+					children:[
+						{
+							path:"/ShopIndexFashion",
+							component:ShopIndexFashion 
+						},
+						{
+							path:"/ShopSpecial",
+							component:ShopSpecial 
+						}
+					]
+				},{
+					path:"/myFaction",
+					component:myFaction
+				},{
+					path:"/myGoshop",
+					component:myGoshop
+				}
+			]
+		},{
+			path:"/myDetail/:id",
+			component:myDetail,
+			name:"myDetail"
+		},{
+			path:"/Mine",
+			component:Mine,
+			name:"Mine"
+		},{
+			path:"/*",
+			component:Errorpage
+		}
   ]
 })

@@ -1,0 +1,16 @@
+
+    .menuList{
+        width:3.2rem;
+        height:0.68rem;
+        @include flexbox();
+        @include flex-direction(row);
+        background: white;
+        padding-top:0.1rem;
+        li{
+            @include flex();
+            height:100%;
+            @include flexbox();
+            @include flex-direction(column);
+            text-align: center;
+        }
+    }

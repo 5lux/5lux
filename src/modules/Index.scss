@@ -1,0 +1,256 @@
+
+    .container{
+        width:100%;
+        height:100%;
+        font-size:0.12rem;
+        @include flexbox();
+        @include flex-direction(column);
+        .banner{
+            @include flex(1);
+            position: relative;
+            width:100%;
+            overflow: hidden;
+            overflow-y: scroll;
+             .posContainer{
+                @include flex-direction(column);
+                .mint-swipe{
+                    width:100%;
+                    height:3.52rem;
+                    img{
+                        width:100%;
+                        height:100%;
+                    }
+                    img[lazy=loading] {
+                      width: 100%;
+                      height: 100%;
+                      background:url(../assets/images/good_load.gif) ;
+                      background-size:100% 100% ;
+                    }
+                    .mint-swipe-indicator{
+                        border:2px solid white;
+                        opacity: 1;
+                        background: transparent;
+                    }
+                    .is-active{
+                        background: white;
+                    }
+                }
+                .menuList{
+                    width:3.2rem;
+                    height:0.68rem;
+                    @include flexbox();
+                    @include flex-direction(row);
+                    background: white;
+                    padding-top:0.1rem;
+                    li{
+                        @include flex();
+                        height:100%;
+                        @include flexbox();
+                        @include flex-direction(column);
+                       text-align: center;
+                    }
+                }
+                .memberList{
+                    width:3.2rem;
+                    height:2.36rem;
+                    background: white;
+                    li{
+                        width:1.565rem;
+                        height:1.105rem;
+                        overflow:hidden;
+                        float:left;
+                        &:nth-child(odd){
+                            margin-right:0.07rem;
+                        }
+                        &:nth-child(-n+2){
+                            margin-bottom:0.07rem;
+                        }
+                        img{
+                            width:100%;
+                            height:100%;
+                        }
+                    }
+                }
+                .shareList{
+                    width:100%;
+                    height:auto;
+                    @include flexbox();
+                    @include flex-direction(column);
+                    .bigShare{
+                        width:100%;
+                        height:2.5rem;
+                        img{
+                            width:100%;
+                            height:100%;
+                        }
+                    }
+                    .sLists{
+                        width:3.2rem;
+                        height:0.91rem;
+                        background: white;
+                        @include flexbox();
+                        li{
+                            @include flex();
+                            padding:0.1rem 0.05rem 0.1rem 0.05rem;
+                            img{
+                                width:100%;
+                                height:100%;
+                            }
+                        }
+                    }
+                }
+                .imgA{
+                    width:100%;
+                    height:2.6rem;
+                    padding-bottom:0.1rem;
+                    img{
+                        width:100%;
+                        height:100%;
+                    }
+                }
+                .imgB{
+                    width:100%;
+                    height:2.6rem;
+                    padding-bottom:0.1rem;
+                    img{
+                        width:100%;
+                        height:100%;
+                    }
+                }
+                .article_list{
+                    width:100%;
+                    height:auto;
+                    background: white;
+                    .articleImg{
+                        width:100%;
+                        height:2.5rem;
+                        position: relative;
+                        img{
+                            width:100%;
+                            height:100%;
+                        }
+                        span{
+                            display:block;
+                            width:0px;
+                            height:0px;
+                            border:10px solid transparent;
+                            border-bottom:10px solid white;
+                            position: absolute;
+                            left:1.55rem;
+                            bottom:0px; 
+                           
+                        }
+                    }
+                    .article_box{
+                        width:100%;
+                        height:108px;
+                        padding:18px 20px 20px;
+                        background: white;
+                        .p1{
+                            font-weight: 700;
+                            width:100%;
+                            font-size: 14px;
+                            color: #333;
+                            height: 54px;
+                            line-height: 54px;
+                            white-space: nowrap;
+                            text-overflow: ellipsis;
+                            overflow: hidden;
+                        }
+                        .p2{
+                            color: #999;
+                            height: 36px;
+                            font-size: 14px;
+                            line-height: 18px;
+                            @include ellipsis(null,2);
+                        }
+                    }
+                    .articleBorder{
+                        height:20px;
+                        width:88%;
+                        margin:0 auto;
+                        border-color:#ccc;
+                        @include border(0px 0px 1px 0px);
+                    }
+                    .argoodsBox{
+                        width:100%;
+                        height:215px;
+                        padding:20px 10px;
+                        .argoodsList{
+                            width:100%;
+                            height:215px;
+                            overflow-x: scroll;
+                            overflow-y: hidden;
+                            padding:17px 0px;
+                            @include flexbox();
+                            @include flex-direction(row);
+                            li{
+                                width:150px;
+                                height:100%;
+                                padding:0 10px;
+                                @include flexbox();
+                                @include flex-direction(column);
+                                img{
+                                    width:auto;
+                                    height:130px;
+                                    @include justify-content(center);
+                                }
+                                span{
+                                    font-size:12px;
+                                    text-align: center;
+                                     @include ellipsis(null,1);
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+           
+            
+            
+        footer{
+            height:44px;
+            width:100%;
+            overflow: hidden;
+            background: #000;
+            font-size:12px;
+                ul{
+                        width:100%;
+                        height:100%;
+                        @include flexbox();
+                        @include flex-direction();
+                        li{
+                            @include flexbox();
+                            @include flex-direction(column);
+                            @include flex();
+                            height:100%;
+                            color:white;
+                            text-align: center;
+                            color:#7e8c8d;
+                            &.router-link-active i,
+                            &.router-link-active span{
+                                color:#fff;
+                            }
+                        }
+                    }
+            
+        }
+    }
+    .wrap{
+        width:100%;
+        height:100%;
+        font-size:16px;
+        
+        @include flexbox();
+        @include flex-direction(column);
+        div{
+            height:50px;
+            line-height:50px;
+        }
+        img{
+            @include flex();
+            width:100%;
+        }
+        
+    }

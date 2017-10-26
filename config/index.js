@@ -28,26 +28,42 @@ module.exports = {
   dev: {
     env: require('./dev.env'),
     port: process.env.PORT || 4000,
-    autoOpenBrowser: true,
+    autoOpenBrowser: false,
     assetsSubDirectory: 'static',
     assetsPublicPath: '/',
     proxyTable: {
-    	
-      '/abc': {
-        target: 'http://api.restful.5lux.com.cn/shop/get_flagship_recommend',
+    	'/def': {
+        target: 'http://api.restful.5lux.com.cn/index/index_slider',
+        changeOrigin: true,
+        pathRewrite: {
+          '^/def': ''
+        }
+				},
+				'/abc': {
+        target: 'http://api.restful.5lux.com.cn/index/columu_recommend',
         changeOrigin: true,
         pathRewrite: {
           '^/abc': ''
         }
-      },
-      '/vip': {
-        target: 'http://localhost:9000/',
+				},
+				'/ghi': {
+        target: 'http://api.restful.5lux.com.cn/index/other_advert',
         changeOrigin: true,
         pathRewrite: {
-          '^/vip': ''
+          '^/ghi': ''
         }
-      }
+				},
+				'/tse': {
+        target: 'http://api.restful.5lux.com.cn/good/storelist?mtoken=&region_id=&brand_id=&longitude=&latitude=&is_nearby=&is_bespeak=&page=',
+        changeOrigin: true,
+        pathRewrite: {
+          '^/tse': ''
+        }
+				}
     },
+    externals:{
+	  	"iscroll":"window.iscroll-probe"
+	  },
     // CSS Sourcemaps off by default because relative paths are "buggy"
     // with this option, according to the CSS-Loader README
     // (https://github.com/webpack/css-loader#sourcemaps)
