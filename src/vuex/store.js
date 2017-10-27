@@ -1,6 +1,7 @@
 //状态管理
 import Vue from "vue";
 import Vuex from "vuex";
+import products from "./modules/products.js"
 Vue.use(Vuex);
 
 const store=new Vuex.Store({
@@ -12,6 +13,12 @@ const store=new Vuex.Store({
 		isAllcityshow:false,
 		cityName:"所有城市",
 		brandName:"所有品牌"
+	},
+	modules: {
+	    products,
+	},
+	getters:{
+		
 	},
 	mutations:{
 		changeIndex(state,payload){

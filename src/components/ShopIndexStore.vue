@@ -1,11 +1,12 @@
 <template lang="html">
 	<div class="shopIndexStore">
-		<div class="shop-index-banner">
-			<mt-swipe :auto="1000">
+		<img src="../assets/images/Star_Ring_loading-01-05.png" class="loading"  v-if="isFinished"/>
+		<div class="shop-index-banner" v-show="!isFinished">
+			<mt-swipe :auto="4000">
 			  <mt-swipe-item>
-			  	<a href="#">
+			  	
 			  		<img src="http://img550.5lux.com.cn/2017/10/19/bc/150838149832_1440x520.jpg"/>
-			  	</a>
+			  
 			  </mt-swipe-item>
 			  <mt-swipe-item>
 			  	<a href="#">
@@ -95,6 +96,7 @@
 				dataList: [],
 				dataPro: [],
 				index: 1,
+				isFinished: true
 			}
 		},
 		methods: {
@@ -135,9 +137,21 @@
 		        const data = res.data.data
 		        this.dataList = data
 		        this.dataPro = data[this.index-1].store_infos
+		        this.isFinished = false
 		    })
 		}
 	}
 </script>
 
-
+<style type="css" scoped>
+	.loading{
+        width:0.8rem;
+        height:0.8rem;
+        animation:mymove 1s linear infinite;
+        margin-left: 35%; 
+    }
+    @keyframes mymove{
+        from {transform:rotate(0deg)}
+        to {transform:rotate(360deg)}
+    }
+</style>
