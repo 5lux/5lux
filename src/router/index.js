@@ -10,6 +10,8 @@ import myPosition from "../components/myPosition.vue";
 import Errorpage from "../components/Errorpage";
 import ShopIndexFashion from "../components/ShopIndexFashion.vue";
 import ShopSpecial from "../components/ShopSpecial.vue";
+import register from "../components/register.vue";
+import myInfo from "../components/myInfo.vue";
 
 import Cart from "../components/Cart.vue";
 Vue.use(VueRouter);
@@ -56,6 +58,13 @@ export default new VueRouter({
 		},{
 			path:"/cart",
 			component:Cart
+		},{
+			path:'/register',
+			component: register
+		
+		},{
+			path:"/myInfo",
+			component: myInfo
 		},{
 			path:"/*",
 			component:Errorpage
