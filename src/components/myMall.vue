@@ -26,6 +26,8 @@
 	Vue.component(SwipeItem.name, SwipeItem);
 	import { Lazyload } from 'mint-ui';
 	Vue.use(Lazyload)
+	import "../assets/iconfont/more/iconfont.ttf";
+	import "../assets/iconfont/more/iconfont.woff";
 	
 	export default {
 		data() {

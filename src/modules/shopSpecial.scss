@@ -28,12 +28,13 @@
             right: 0;
             z-index: 101;
             .shopbackbutton{
-                width: 30px;
-                height: 30px;
-                background: red;
+                width: 44px;
+                height: 44px;
                 position: absolute;
                 left: 0;
                 top: 0;
+                line-height: 44px;
+                text-align: center;
                 z-index: 103;
             }
             .selectors{
@@ -104,6 +105,9 @@
                                 }
                                 li:last-child{
                                     @include border(0);
+                                }
+                                .isActivity{
+                                    color: #9b885f;
                                 }
                             }
                         }

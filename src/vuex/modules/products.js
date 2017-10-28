@@ -5,6 +5,7 @@ const state = {
   all: [],
   id: 0,
   page: 1,
+  sort: '',
   order:'',
   is_self:'',
   price: '',
@@ -29,6 +30,9 @@ const actions = {
 	    	console.log(res)
 	    	
 	    })
+  },
+  getorder({ commit }){
+//	console.log(state.sort,state.order)
   }
 }
 

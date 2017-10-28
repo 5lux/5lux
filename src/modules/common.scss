@@ -6,9 +6,14 @@ body,html{
     width:100%;
     height:100%;
 }
- @font-face {
+@font-face {
   font-family: 'iconfont';
 src: url('../assets/iconfont/iconfont.woff') format('woff'), url('../assets/iconfont/iconfont.ttf') format('truetype')
+}
+
+@font-face {
+font-family: 'iconfont';
+src: url('../assets/iconfont/more/iconfont.woff') format('woff'), url('../assets/iconfont/more/iconfont.ttf') format('truetype')
 }
 .iconfont{
   font-family:"iconfont" !important;

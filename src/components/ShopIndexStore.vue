@@ -43,25 +43,25 @@
 		<div class="shop-index-sort">
 			<ul>
 				<li>
-					<i class="yo-ico">&#xe65a;</i>
+					<i class="iconfont">&#xe65a;</i>
 					<div>
 						分类
 					</div>
 				</li>
 				<li>
-					<i class="yo-ico">&#xe60e;</i>
+					<i class="iconfont">&#xe60e;</i>
 					<div>
 						专柜自提
 					</div>
 				</li>
 				<li>
-					<i class="yo-ico">&#xe613;</i>
+					<i class="iconfont">&#xe613;</i>
 					<div>
 						会员特权
 					</div>
 					</li>
 				<li>
-					<i class="yo-ico">&#xe623;</i>
+					<i class="iconfont">&#xe623;</i>
 					<div>
 						礼品
 					</div>

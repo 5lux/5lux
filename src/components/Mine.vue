@@ -1,5 +1,7 @@
 <template>
-	<div class="mineWrap">我的</div>
+	<div class="mineWrap">
+		
+	</div>
 </template>
 
 <script>
