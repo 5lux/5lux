@@ -83,7 +83,7 @@
 			},
 			change(){
 				this.i++
-				this.i=this.i%5
+				this.i=this.i%this.checknum.length
 			},
 			checked(){
 				if(this.checknum[this.i]==this.check){

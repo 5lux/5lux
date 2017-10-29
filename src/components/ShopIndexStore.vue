@@ -3,41 +3,14 @@
 		<img src="../assets/images/Star_Ring_loading-01-05.png" class="loading"  v-if="isFinished"/>
 		<div class="shop-index-banner" v-show="!isFinished">
 			<mt-swipe :auto="4000">
-			  <mt-swipe-item>
+			  <mt-swipe-item v-for="img in imgs">
 			  	
-			  		<img src="http://img550.5lux.com.cn/2017/10/19/bc/150838149832_1440x520.jpg"/>
+			  		<img v-lazy="img"/>
 			  
 			  </mt-swipe-item>
-			  <mt-swipe-item>
-			  	<a href="#">
-			  		<img  src="http://img550.5lux.com.cn/2017/10/18/de/150829035724_1440x520.jpg"/>
-			  	</a>
-			  </mt-swipe-item>
-			  <mt-swipe-item>
-			  	<a href="#">
-			  		<img src="http://img550.5lux.com.cn/2017/10/17/wx/150822739672_1440x520.jpg"/>
-			  	</a>
-			  </mt-swipe-item>
-			  <mt-swipe-item>
-			  	<a href="#">
-			  		<img src="http://img550.5lux.com.cn/2017/10/16/pq/150812239219_1440x520.jpg"/>
-			  	</a>
-			  </mt-swipe-item>
-			  <mt-swipe-item>
-			  	<a href="#">
-			  		<img src="http://img550.5lux.com.cn/2017/10/12/de/150777952298_1440x520.jpg"/>
-			  	</a>
-			  </mt-swipe-item>
-			  <mt-swipe-item>
-			  	<a href="#">
-			  		<img src="http://img550.5lux.com.cn/2017/10/11/hi/150769006089_1440x520.jpg"/>
-			  	</a>
-			  </mt-swipe-item>
-			  <mt-swipe-item>
-			  	<a href="#">
-			  		<img src="http://img550.5lux.com.cn/2017/04/18/ef/149247926655_1440x520.jpg"/>
-			  	</a>
-			  </mt-swipe-item>
+			  
+			  
+			  
 			</mt-swipe>
 		</div>
 		<div class="shop-index-sort">
@@ -96,7 +69,8 @@
 				dataList: [],
 				dataPro: [],
 				index: 1,
-				isFinished: true
+				isFinished: true,
+				imgs: ["http://img550.5lux.com.cn/2017/10/19/bc/150838149832_1440x520.jpg","http://img550.5lux.com.cn/2017/10/18/de/150829035724_1440x520.jpg","http://img550.5lux.com.cn/2017/10/17/wx/150822739672_1440x520.jpg","http://img550.5lux.com.cn/2017/10/16/pq/150812239219_1440x520.jpg","http://img550.5lux.com.cn/2017/10/12/de/150777952298_1440x520.jpg","http://img550.5lux.com.cn/2017/10/11/hi/150769006089_1440x520.jpg","http://img550.5lux.com.cn/2017/04/18/ef/149247926655_1440x520.jpg"]
 			}
 		},
 		methods: {
@@ -149,6 +123,7 @@
         height:0.8rem;
         animation:mymove 1s linear infinite;
         margin-left: 35%; 
+        margin-top: 60%;
     }
     @keyframes mymove{
         from {transform:rotate(0deg)}

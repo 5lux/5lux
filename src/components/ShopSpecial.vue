@@ -40,7 +40,7 @@
 							<div v-if="!gots">
 								<ul v-for="word in sortdata.brands_info.all_brand">
 									<li>{{word.first_name}}</li>
-									<li v-for="(value, index) in word.child" @click="brandTypeSelect(value.brand_name, index)" :class="{isActivity: brandSelect === value.brand_name}">{{value.brand_name}}<span :style="{color: brandSelect === value.brand_name?'red':'white'}">selected</span></li>
+									<li v-for="(value, index) in word.child" @click="brandTypeSelect(value.brand_name, index)" :class="{isActivity: brandSelect === value.brand_name}">{{value.brand_name}}<span :style="{color: brandSelect === value.brand_name?'red':'white'}">√</span></li>
 								</ul>
 							</div>
 						</section>

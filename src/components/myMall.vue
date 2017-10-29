@@ -104,7 +104,7 @@
         width:0.8rem;
         height:0.8rem;
         animation:mymove 1s linear infinite;
-        margin: 2rem auto;
+        margin: 4rem auto;
     }
     @keyframes mymove{
         from {transform:rotate(0deg)}

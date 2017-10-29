@@ -149,6 +149,7 @@
         height:0.8rem;
         animation:mymove 1s linear infinite;
         margin-left: 35%; 
+        margin-top: 60%;
     }
     @keyframes mymove{
         from {transform:rotate(0deg)}
