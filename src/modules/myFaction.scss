@@ -1,0 +1,109 @@
+.myFaction{
+    width: 100%;
+    height: 100%;
+    box-sizing:border-box;
+    >ul{
+        position: fixed;
+        z-index: 100;
+        top: 0;
+        left: 0;
+        height: .4rem;
+        width: 100%;
+        display: flex;
+        background: #333;
+        flex-direction: row;
+        li{
+            flex: 1;
+            font-size: 15px;
+            text-align: center;
+            line-height: .4rem;
+            color: white;
+        }
+        li:nth-child(1){
+            border-bottom: 2px solid #ffb512;
+            color: #ffb512;
+        }
+    }
+    .myFactioncenter{
+        width: 100%;
+        height: 100%;
+        background: #eee;
+        padding: 0 8px;
+        margin-top: 40px;
+        ul{
+            overflow-y: scroll;
+            width: 100%;
+            >li{
+                margin-top: 10px;
+                width: 100%;
+                height: 4.03rem;
+                background: white;
+                .title{
+                    font-size: 12px;
+                    color: #333;
+                    img{
+                        width: 30px;
+                        height: 30px;
+                        border-radius: 50%;
+                        margin: 10px;
+                    }
+                    .focus{
+                        width: 60px;
+                        height: 20px;
+                        margin: 10px;
+                        border: 1px solid black;
+                        border-radius: 10px;
+                        text-align: center;
+                        float: right;
+                    }
+                }
+                >img{
+                    width: 100%;
+                    height: 192px;  
+                }
+                .shareTitle{
+                    width: 100%;
+                    height: 120px;
+                    @include border(0 0 1px 0, #999, solid);
+                    dl{
+                        dt{
+                            padding: 20px 10px 20px;
+                            font-size: 15px;
+                            height: 76px;
+                        }
+                        dd{
+                            padding: 0 10px;
+                            width: 100%;
+                            height: 39px;
+                            color: #999;
+                            font-size: 12px;
+                            @include ellipsis(100%, 2) ;
+                            
+                        }
+                    }
+                }
+                >ul{
+                    padding-left: 10px;
+                    li{
+                        width: 70px;
+                        height: 20px;
+                        float: left;
+                        span{
+                            font-size: 12px;
+                            display: inline-block;
+                        }
+                    }
+                    li:last-child{
+                        width: 70px;
+                        height: 20px;
+                    }
+                }
+            }
+            >li:last-child{
+                width: 0;
+                height: 0;
+                margin-bottom: 10px;
+            }
+        }
+    }
+}

@@ -13,8 +13,8 @@ const store=new Vuex.Store({
 		isAllcityshow:false,
 		cityName:"所有城市",
 		brandName:"所有品牌",
-		correctUser:13912345689,
-		correctPass:123456,
+		correctUser:[13912345689,18912345567],
+		correctPass:[123456,123456],
 	},
 	modules: {
 	    products,

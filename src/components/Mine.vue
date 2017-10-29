@@ -40,9 +40,22 @@
 				passIsCorrect: false
 			}
 		},
+		mounted(){
+			var list = document.cookie.split("; ");
+			var cooklist;
+			for(var i = 0; i < list.length; i++) {
+				cooklist = list[i].split("=");
+				for(var j=0;j<this.$store.state.correctUser.length;j++){
+					
+					if('name' === cooklist[0]&&cooklist[1]==this.$store.state.correctUser[j]) {
+						this.$router.push("/myInfo")
+					}
+				}
+			}
+		},
 		methods:{
 			goback(){
-				this.$router.go(-1)
+				this.$router.push('/')
 			},
 			passShowChange(){
 				this.passShow = !this.passShow
@@ -61,21 +74,30 @@
 				}
 			},
 			login(){
+				this.userIsCorrect= false
+				this.passIsCorrect= false
+				var j;
 				if(this.username!=''||this.passwords!=''){
 					this.notLogin = false
-					if(this.username!=this.$store.state.correctUser){
-						this.userIsCorrect = true
-					}else{
-						this.userIsCorrect = false
-					}
-					if(this.passwords!=this.$store.state.correctPass){
-						this.passIsCorrect = true
-					}else{
-						this.passIsCorrect = false
+					for(var i=0;i<this.$store.state.correctUser.length;i++){
+						if(this.username!=this.$store.state.correctUser[i]){
+							this.userIsCorrect = true
+						}else{
+							this.userIsCorrect = false
+							if(this.passwords!=this.$store.state.correctPass[i]){
+								this.passIsCorrect = true
+							}else{
+								this.passIsCorrect = false
+								j=i
+								break
+							}
+						}
 					}
 				}
 				if(this.userIsCorrect==false&&this.userIsCorrect==false){
-					console.log('login success')
+					var date = new Date();
+					date.setDate(date.getDate() + 7);
+					document.cookie = 'name' + "=" + this.$store.state.correctUser[j] + ";" + "expires=" + date + ";" + "path=" + "/;"
 					this.$router.push('/myInfo')
 				}
 			}

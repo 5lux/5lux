@@ -20,6 +20,11 @@ src: url('../assets/iconfont/more/iconfont.woff') format('woff'), url('../assets
 font-family: 'iconfont';
 src: url('../assets/iconfont/addMore/iconfont.woff') format('woff'), url('../assets/iconfont/addMore/iconfont.ttf') format('truetype')
 }
+
+@font-face {
+font-family: 'iconfont';
+src: url('../assets/iconfont/myFaction/iconfont.woff') format('woff'), url('../assets/iconfont/myFaction/iconfont.ttf') format('truetype')
+}
 .iconfont{
   font-family:"iconfont" !important;
   font-size:16px;font-style:normal;
