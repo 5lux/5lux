@@ -1,11 +1,9 @@
 <template lang="html">
 	<div class="shop-m-index">
-		<div class="shop-index-head" v-if="isShow">
-			<my-search></my-search>
-		</div>
+		<div class="shop-index-head" v-if="isShow"></div>
 		<div class="shop-index-nav">
 			<ul>
-				<router-link :to="{path: type.path}" v-for="(type,index) in types" tag='li' :id="dataList[index]['cata_id']" :ref="dataList[index]['cata_id']" @click.native="sendId(dataList[index]['cata_id'])">{{type.name}}</router-link>
+				<router-link :to="{path: type.path}" v-for="(type,index) in types" tag='li' :id="dataList[index].cata_id" :ref="dataList[index]['cata_id']" @click.native="sendId(dataList[index]['cata_id'])">{{type.name}}</router-link>
 			</ul>
 		</div>
 		<section @scroll="handleScroll" ref="scroll">
@@ -18,7 +16,7 @@
 
 <script>
 	import Vue from "vue";
-	import mySearch from "./mySearch.vue";
+
   	import axios from "axios";
   	import { Swipe, SwipeItem } from 'mint-ui';
 	Vue.component(Swipe.name, Swipe);
@@ -57,17 +55,10 @@
 		    
 		},
 		components: {
-		    mySearch
+		    
 		}
 	}
 </script>
 
-<style scoped>
-	.myHeader{
-		position: relative;
-		top: 0;
-		color: white;
-		
-	}
-
+<style>
 </style>

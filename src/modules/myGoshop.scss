@@ -47,6 +47,18 @@
             position: absolute;
             top:11px;
             right:25px;
+            p{
+                width:12px;
+                height:12px;
+                font-size:12px;
+                border-radius:50%;
+                background: red;
+                color:white;
+                line-height:12px;
+                position: absolute;
+                right:0px;
+                top:0px;
+            }
         }
     }
     .arriveMenu{
@@ -62,6 +74,7 @@
                 @include flex();
                 text-align: center;
                 line-height:44px;
+                @include ellipsis(100px,1);
                 span{
                     font-size:12px;
                     font-weight:bold;

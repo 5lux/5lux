@@ -1,0 +1,496 @@
+.detailWrap{
+    @include flexbox();
+    @include flex-direction(column);
+    font-size:0.14rem;
+    width:100%;
+    height:100%;
+    .posShow{
+        @include flex();
+        overflow-y: scroll;
+        width:100%;
+    }
+    .detailHeader{
+        width:100%;
+        height:44px;
+        background: rgba(255,255,255,1);
+        position:fixed;
+        left:0px;
+        top:0px;
+        z-index:100;
+        .backLeft{
+            width:26px;
+            height:26px;
+            font-size:20px;
+            line-height:24px;
+            text-align: center;
+            background: rgba(0,0,0,0.5);
+            color:white;
+            border-radius:50%;
+            position: absolute;
+            left:10px;
+            top:10px;
+        }
+        .topMenu{
+            width:120px;
+            height:40px;
+            margin:0 auto;
+            li{
+                float:left;
+                width:40px;
+                height:40px;
+                text-align: center;
+                line-height:40px;
+                color:#999;
+            }
+            .toRight{
+                color:black;
+                border-bottom: 2px solid black;
+            }
+        }
+    }
+    .detailPosout{
+        overflow-y: scroll;
+        width:100%;
+        .detailPosinner{
+            width:100%;
+            height:auto;
+            position: relative;
+            .swiperPos{
+                width:40px;
+                height:20px;
+                z-index:1000;
+                position:absolute;
+                right:20px;
+                top:2.8rem;
+            }
+            .mint-swipe{
+                width:100%;
+                height:3.2rem;                
+                .mint-swipe-items-wrap{
+                    width:100%;
+                    height:100%;
+                    img{
+                        width:100%;
+                        height:100%;
+                    }
+                }
+            }
+            .detailInfo{
+                width:100%;
+                height:auto;
+                background: white;
+                .infoPrice{
+                    width:90%;
+                    height:64px;
+                    overflow: hidden;
+                    margin:0 auto;
+                    @include border(0px 0px 1px 0px);
+                    .price1{
+                        height:64px;
+                        line-height:64px;
+                        color:#9b885f;
+                        font-size:24px;
+                        float:left;
+                        span{
+                            font-size:14px;
+                        }
+                    }
+                    .price2{
+                        float:left;
+                        height:68px;
+                        line-height:68px;
+                        color:#999;
+                        margin-left:10px;
+                        text-decoration:line-through;
+                    }
+                    .price3{
+                        float:left;
+                        border:1px solid #9b885f; 
+                        width:60px;
+                        height:16px;
+                        text-align: center;
+                        line-height:16px;
+                        font-size:12px;
+                        color:#9b885f; 
+                        margin-top:24px;
+                        margin-left:10px;
+                    }
+                }
+                .infoStore{
+                    width:90%;
+                    height:64px;
+                    margin:0 auto;
+                    .div1{
+                        height:30px;
+                        line-height:40px;
+                        font-size:14px;
+                        @include ellipsis(null,1);
+                    }
+                    .div2{
+                        height:30px;
+                        overflow: hidden;
+                        line-height:30px;
+                        .p1{
+                            float:left;
+                            font-size:12px;
+                            color:#999;
+                            height:30px;
+                        }
+                        .p2{
+                            float:left;
+                            font-size:12px;
+                            text-decoration: underline;
+                            color:#c8a985;
+                            @include ellipsis(null,1);
+                            margin-left:10px;
+                            height:30px;
+                        }
+                    }
+                }
+            }
+            .serverInfo{
+                width:100%;
+                height:120px;
+                background: white;
+                margin-top:10px;
+                margin-bottom:10px;
+                .server1{
+                    width:90%;
+                    margin:0 auto;
+                    height:44px;
+                    @include border(0px 0px 1px 0px);
+                    font-size:12px;
+                    .div1{
+                        float:left;
+                        background: #9b885f;
+                        color:white;
+                        padding:0 5px;
+                        margin-top:10px;
+                    }
+                    .div2{
+                        float:left;
+                        height:44px;
+                        line-height:40px;
+                        margin-left:10px;
+                        @include ellipsis(null,1);
+                    }
+                }
+                .serverList{
+                    height:76px;
+                    font-size:12px;
+                    li{
+                        float:left;
+                        color:#666;
+                        padding:10px 10px;
+                        img{
+                            width:15px;
+                            height:15px;
+                            margin-right:2px;
+                        }
+                    }
+                }
+            }
+            .stateInfo{
+                width:100%;
+                height:88px;
+                background: white;
+                
+                .div1,.div2{
+                    width:90%;
+                    margin:0 auto;
+                    height:44px;
+                    @include border(0px 0px 1px 0px);
+                    .p1{
+                        height:42px;
+                        line-height:42px;
+                        float:left;
+                        font-size:14px;
+                        color:#333;
+                    }
+                    .p2{
+                        float:right;
+                        height:42px;
+                        line-height:42px;
+                        color:#333;
+                        font-weight:bold;
+                    }
+                }
+            }
+            .productJie{
+                width:100%;
+                height:auto;
+                padding-top:10px;
+                background: white;
+                margin-top:10px;
+                img{
+                    width:90%;
+                    height:1.76rem;
+                    margin-left:5%;
+                }
+                .div1{
+                    width:90%;
+                    height:0.6rem;
+                    text-align: center;
+                    line-height:0.6rem;
+                    color:#333;
+                    font-size:14px;
+                    font-weight:bold;
+                }
+                .div2{
+                    width:90%;
+                    margin-left:5%;
+                    line-height:20px;
+                    font-size:12px;
+                    color:#666;
+                    text-indent:20px;
+                    padding-bottom:20px;
+                }
+            }
+            .picInfo{
+                width:100%;
+                margin-top:10px;
+                img{
+                    width:100%;
+                }
+            }
+            .guessInfo,.recommendationInfo{
+                width:100%;
+                height:auto;
+                background: white;
+                .pTop{
+                    width:100%;
+                    height:44px;
+                    text-align: center;
+                    line-height:44px;
+                    font-size:14px;
+                    color:#666;
+                    @include border(0px 0px 1px 0px);
+                }
+                .list{
+                    width:100%;
+                    height:auto;
+                    overflow: hidden;
+                    li{
+                        width:1.6rem;
+                        height:2.2rem;
+                        float:left;
+                        img{
+                            width:1.53rem;
+                            height:1.53rem;
+                            margin-left:0.03rem;
+                        }
+                        .p1{
+                            height:0.3rem;
+                            line-height:0.3rem;
+                            text-align: center;
+                            font-size:12px;
+                            color:#333;
+                            @include ellipsis(null,1);
+                        }
+                        .p2{
+                            height:0.3rem;
+                            line-height:0.2rem;
+                            text-align: center;
+                            font-size:14px;
+                            color:#666;
+                        }
+                    }
+                }
+            }
+//          弹出框模块
+            .mint-actionsheet1{
+                background: white;
+                transition: all 2s;
+                .mint-actionsheet-list{
+                    .mint-actionsheet-listitem{
+                        width:90%;
+                        height:44px;
+                        margin:0 auto;
+                        font-size:14px;
+                        color:#999;
+                        border-bottom: 0;
+                        @include border(0px 0px 1px 0px);
+                        text-align: left;
+                        overflow: hidden;
+                        p{
+                            width:100%;
+                            height:100%;
+                            @include ellipsis(null,1);
+                        }
+                    }
+                }
+                .mint-actionsheet-button{
+                    height:50px;
+                    color:white;
+                    background:#9b885f;
+                }
+            }
+            .mint-actionsheet2{
+                background: white;
+                .picInfo{
+                    width:100%;
+                    height:90px;
+                    @include border(0px 0px 1px 0px);
+                    position: relative;
+                    .divLeft{
+                        width:98px;
+                        height:98px;
+                        @include border(1px 1px 1px 1px);
+                        position: absolute;
+                        left:20px;
+                        top:-40px;
+                        img{
+                            width:100%;
+                            height:100%;
+                        }
+                    }
+                    .divRight{
+                        width:1.7rem;
+                        height:90px;
+                        position: absolute;
+                        left:130px;
+                        top:0px;      
+                        p{
+                            font-size:14px;
+                            font-weight:100;
+                            text-align:left;
+                        }  
+                        .p1{
+                            color:#333;
+                            @include ellipsis(null,1);
+                        }
+                        .p2{
+                            color:#9b885f;
+                        }
+                        .p3{
+                            color:#999;
+                            font-size:12px;
+                        }
+                    }
+                }
+                .colorInfo,.sizeInfo{
+                    width:90%;
+                    height:auto;
+                    margin:0 auto;
+                    p{
+                        height:40px;
+                        line-height:40px;
+                        text-align: left;
+                        font-size:14px;
+                    }
+                    ul{
+                        height:auto;
+                        margin:0 auto;
+                        overflow: hidden;
+                        li{
+                            float:left;
+                            font-size:12px;
+                            color:#333;
+                            border:1px solid #ccc;
+                            padding:3px 5px;
+                            border-radius:3px;
+                            margin-right:10px;
+                            margin-top:10px;
+                        }
+                    }
+                }
+                .numInfo{
+                    width:90%;
+                    height:auto;
+                    margin:0 auto;
+                    margin-bottom:50px;
+                    .numTop{
+                        height:40px;
+                        line-height:40px;
+                        text-align: left;
+                        font-size:14px;
+                    }
+                    .numChange{
+                        width:1.5rem;
+                        height:30px;
+                        .numMinus{
+                            width:0.3rem;
+                            height:30px;
+                            float:left;
+                            line-height:30px;
+                            text-align:center;
+//                          @include border(1px 1px 1px 1px);
+                            border:1px solid #ccc;
+                        }
+                        input{
+                            width:0.9rem;
+                            height:30px;
+                            float:left;
+                            text-align: center;
+                            line-height:30px;
+//                          @include border(1px 1px 1px 1px);
+                            border:1px solid #ccc;
+                        }
+                        .numAdd{
+                            width:0.3rem;
+                            height:30px;
+                            float:left;
+                            text-align: center;
+                            line-height:30px;
+//                          @include border(1px 1px 1px 1px);
+                            border:1px solid #ccc;
+                        }
+                    }
+                }
+                .mint-actionsheet-button{
+                    height:50px;
+                    color:white;
+                    background:#9b885f;
+                }
+            }
+        }
+    }
+    .foot{
+        height:50px;
+        background:white;
+        @include flexbox();
+        .div1{
+            width:56px;
+            height:50px;
+            overflow: hidden;
+            font-size:12px;
+            color:#666;
+            text-align: center;
+            @include border(1px 0px 1px 1px);
+            img{
+                width:20px;
+                margin-top:2px;
+                margin-bottom: 2px;
+            }
+            
+        }
+        .div2{
+            width:56px;
+            height:50px;
+            font-size:12px;
+            color:#666;
+            text-align: center;
+            @include border(1px 1px 1px 1px);
+        }
+        .shopCar{
+            width:35%;
+            height:50px;
+            background: #ccb27f;
+            color:white;
+            text-align: center;
+            line-height: 50px;
+            font-size:14px;
+            @include flex();
+        }
+        .buyNow{
+            width:35%;
+            height:50px;
+            background: #9b885f;
+            text-align: center;
+            line-height: 50px;
+            color:white;
+            @include flex();
+        }
+        
+    }
+}

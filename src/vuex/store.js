@@ -11,9 +11,25 @@ const store=new Vuex.Store({
 		brand_list:[],
 		isAllcityshow:false,
 		cityName:"所有城市",
-		brandName:"所有品牌"
+		brandName:"所有品牌",
+		isShopshow:true,
+		is_bespeak:"0",
+		region_id:"",
+		brand_id:""
 	},
 	mutations:{
+		changeBrandId(state,payload){
+			state.brand_id=payload;
+		},
+		changeRegionId(state,payload){
+			state.region_id=payload;
+		},
+		changeBespeak(state,payload){
+			state.is_bespeak=payload;
+		},
+		changeShopshow(state,payload){
+			state.isShopshow=payload;
+		},
 		changeIndex(state,payload){
 			state.tabIndex=payload;
 		},

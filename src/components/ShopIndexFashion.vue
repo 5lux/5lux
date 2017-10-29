@@ -17,15 +17,15 @@
 		<div class="sameAsFamous">
 			<h4>明星同款</h4>
 			<h5>—— STAR&nbsp;OUTFITS —— </h5>
-			<a :href="data['star_outfits'].list.ad_link">
-				<img v-lazy="data['star_outfits'].list.ad_code"/></a>
+			<a :href="data.star_outfits.list.ad_link">
+				<img v-lazy="data.star_outfits.list.ad_code"/></a>
 			<p>{{data.star_outfits.list.ad_name}}</p>
 		</div>
 		<div class="fashion_video">
 			<h4>海外馆</h4>
 			<h5>—— OVERSEAS —— </h5>
 			<ul>
-				<li v-for="value in data['oversea_recommend'].list">
+				<li v-for="value in data.oversea_recommend.list">
 					<a :href="value.ad_link">
 						<img v-lazy="value.ad_code"/>
 					</a>
@@ -41,7 +41,7 @@
 					<a :href="value.ad_link">
 						<img v-lazy="value.ad_code"/>
 					</a>
-					<p>{{value['ad_name']}}</p>
+					<p>{{value.ad_name}}</p>
 				</li>
 			</ul>
 		</div>
@@ -116,8 +116,7 @@
 			return {
 				dataList:[],
 				data: [],
-				hot: [],
-				page: 1
+				hot: []
 			}
 		},
 		components:{
@@ -127,10 +126,10 @@
 		    axios.get('http://api.restful.5lux.com.cn/shop/home_all_info')
 		    .then((res)=>{
 		    	this.data = res.data.data
-		        const data = res.data.data['fashion_video'].list
+		        const data = res.data.data.fashion_video.list
 		        this.dataList = data
 		    }),
-		   axios.get('http://api.restful.5lux.com.cn/shop/theirchose/?shop%2Ftheirchose=&page='+this.page)
+		   axios.get('http://api.restful.5lux.com.cn/shop/theirchose/?shop%2Ftheirchose=&page=1')
 		    .then((res)=>{
 		    	this.hot = res.data.data.theirchose
 		    })

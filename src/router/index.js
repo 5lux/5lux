@@ -10,6 +10,8 @@ import myPosition from "../components/myPosition.vue";
 import Errorpage from "../components/Errorpage";
 import ShopIndexFashion from "../components/ShopIndexFashion.vue";
 import ShopSpecial from "../components/ShopSpecial.vue";
+import nearbyShop from "../components/nearbyShop.vue";
+import hotSearch from "../components/hotSearch.vue";
 Vue.use(VueRouter);
 export default new VueRouter({
   routes: [
@@ -38,20 +40,33 @@ export default new VueRouter({
 				},{
 					path:"/myFaction",
 					component:myFaction
+						
 				},{
 					path:"/myGoshop",
-					component:myGoshop
+					component:myGoshop,
+					name:myGoshop
 				}
 			]
 		},{
-			path:"/myDetail/:id",
+			path:"/myDetail",
 			component:myDetail,
 			name:"myDetail"
 		},{
 			path:"/Mine",
 			component:Mine,
 			name:"Mine"
-		},{
+		},
+		{
+			path:"/nearbyShop",
+			component:nearbyShop,
+			name:"nearbyShop"
+		},
+		{
+			path:"/hotSearch",
+			component:hotSearch,
+			name:"hotSearch"
+		},
+		{
 			path:"/*",
 			component:Errorpage
 		}

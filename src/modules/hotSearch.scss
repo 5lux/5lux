@@ -1,0 +1,188 @@
+.hotSearch{
+        width:100%;
+        height:100%;
+        .bacImg{
+            width:100%;
+            height:100%;
+            @include flexbox();
+            @include justify-content(center);
+            @include align-items(center);
+            img{
+                width:0.8rem;
+                height:0.8rem;
+                animation:mymove 1s linear infinite;
+            }
+            @keyframes mymove{
+                from {transform:rotate(0deg)}
+                to {transform:rotate(360deg)}
+            }
+        }
+        .searchBox{
+            @include flexbox();
+            @include flex-direction(column);
+            width:100%;
+            height:100%;
+            .searchB{
+                width:100%;
+                height:44px;
+                background: white;
+                font-size:14px;
+                @include border(0px 0px 1px 0px);
+                .searchLeft{
+                    @include flexbox();
+                    width:80%;
+                    height:32px;
+                    background:#f2f2f2;
+                    float:left;
+                    margin-left:10px;
+                    margin-top:6px;
+                    margin-bottom:6px;
+                    border-radius:5px;
+                    i{
+                        padding-left:6px;
+                        padding-right:6px;
+                        padding-top:3px;
+                    }
+                    input{
+                        border:0;
+                        background: transparent;
+                    }
+                }
+                .searchCancle{
+                    float:right;
+                    height:14px;
+                    line-height:14px;
+                    margin-top:15px;
+                    margin-right:10px;
+                }
+            }
+            .suggestionWrap{
+                @include flex(1);
+                width:100%;
+                overflow-y: scroll;
+                font-size:14px;
+                .searchSugges{
+                    width:100%;
+                    .suggesTop{
+                        width:100%;
+                        p{
+                            height:44px;
+                            line-height:44px;
+                            color:#333;
+                            text-indent:10px;
+                        }
+                        ul{
+                            background: white;
+                            overflow: hidden;
+                            padding-bottom: 10px;
+                            li{
+                                float:left;
+                                height:32px;
+                                line-height:32px;
+                                margin-left:10px;
+                                margin-top: 10px;
+                                color:#7e8c8d;
+                                border:1px solid #e5e5e5;
+                                padding:0px 10px;
+                                border-radius:2.5px;
+                                font-size:12px;
+                            }
+                        }
+                    }
+                    .suggesBottom{
+                        width:100%;
+                        height:auto;
+                        .bottomTip{
+                            height:44px;
+                            line-height:44px;
+                            text-align: center;
+                            color:#999;
+                        }
+                        .bottomList{
+                            background: white;
+                            width:100%;
+                            overflow: hidden;
+                            li{
+                                width:1.2rem;
+                                height:1.86rem;
+                                padding-top:0.1rem;
+                                float:left;
+                                margin-left:0.2rem;
+                                margin-right:0.2rem;
+                                font-size:12px;
+                                img{
+                                    width:1.2rem;
+                                    height:1.2rem;
+                                }
+                                .p1{
+                                    height:0.3rem;
+                                    line-height:0.3rem;
+                                    @include ellipsis(null,1);
+                                }
+                                .p2{
+                                    color:#999;
+                                    text-align: center;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            .searchGoods{
+                width:100%;
+                height:100%;
+                background: white;
+                overflow-y: scroll;
+                font-size:12px;
+                .haveNo{
+                    width:90%;
+                    height:44px;
+                    @include border(0px 0px 1px 0px);
+                    line-height:44px;
+                    margin:0 auto;
+                }
+                .searchGoodspos{
+                    width:100%;
+                    .searchGtop{
+                        width:90%;
+                        height:44px;
+                        @include border(0px 0px 1px 0px);
+                        line-height:44px;
+                        margin:0 auto;
+                        .p1{
+                            float:left;
+                            height:44px;
+                            font-size:14px;
+                            color:#333;
+                        }
+                        .p2{
+                            float:right;
+                            text-align: right;
+                            color:#7e8c8d;
+                        }
+                    }
+                    .searchGbottom{
+                        width:90%;                                
+                        margin:0 auto;
+                        li{
+                            height:44px;
+                            line-height:44px;
+                            @include border(0px 0px 1px 0px);
+                            .p1{
+                                float:left;
+                                height:44px;
+                                font-size:14px;
+                                color:#333;
+                            }
+                            .p2{
+                                float:right;
+                                text-align: right;
+                                color:#7e8c8d;
+                            }
+                        }
+                    }
+                }
+                
+            }
+        }
+}
