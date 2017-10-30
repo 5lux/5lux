@@ -1,3 +1,4 @@
+
 .shopSpecial{
     img{
         width: 100%;
@@ -10,14 +11,14 @@
         top: 0;
         width: 100%;
         height: 100%;
-        z-index: 99;
+        z-index: 101;
         .shopSortShadowLeft{
             width: 0.32rem;
             height: 100%;
             background: rgba(0, 0, 0, 0.3);
             position: absolute;
             left: 0;
-            z-index: 99;
+            z-index: 101;
         }
         .shopSortShadowRight{
             width: 2.88rem;
@@ -25,11 +26,251 @@
             background: white;
             position: absolute;
             right: 0;
-            z-index: 99;
+            z-index: 101;
             .shopbackbutton{
-                width: 30px;
-                height: 30px;
-                background: black;
+                width: 44px;
+                height: 44px;
+                position: absolute;
+                left: 0;
+                top: 0;
+                line-height: 44px;
+                text-align: center;
+                z-index: 103;
+            }
+            .selectors{
+                width: 100%;
+                height: 100%;
+                
+                .shopSortBrand{
+                    width: 100%;
+                    height: 100%;
+                    @include flexbox();
+                    @include flex-direction(column);
+                    p{
+                        height: .44rem;
+                        color: black;
+                        font-size: 16px;
+                        line-height: .44rem;
+                        text-align: center;
+                        font-weight: 400;
+                        @include border(0 0 1px 0, #999, solid);
+                    }
+                    ul.todiffer{
+                        height: .39rem;
+                        @include flexbox();
+                        @include border(0 0 1px 0, #999, solid);
+                        li{
+                            font-size: 14px;
+                            text-align: center;
+                            @include flex(1, row);
+                            height: 100%;
+                            line-height: 39px;
+                            padding: 0 10px;
+                        }
+                        
+                        .isactive{
+                            color: #9b885f;
+                            border-bottom: 2px solid #9b885f;
+                        }
+                    }
+                    section{
+                        @include flex(1);
+                        width: 100%;
+                        div{
+                            font-size: 14px;
+                            width: 100%;
+                            ul{
+                                
+                                li{
+                                    display: block;
+                                    height: 44px;
+                                    line-height: 44px;
+                                    position: relative;
+                                    padding: 0 15px;
+                                    text-align: left;
+                                    font-size: 13px;
+                                    color: #333;
+                                    @include border(0 0 1px 0, #999, solid);
+                                }
+                                li:nth-child(1){
+                                    width: 100%;
+                                    height: 24px;
+                                    line-height: 24px;
+                                    background: #f2f2f2;
+                                    font-size: 18px;
+                                    padding: 0 15px;
+                                    color: #999;
+                                    text-align: left;
+                                    @include border(0);
+                                }
+                                li:last-child{
+                                    @include border(0);
+                                }
+                                .isActivity{
+                                    color: #9b885f;
+                                }
+                            }
+                        }
+                        .shopFirstDiv{
+                            display: block;
+                            position: relative;
+                            text-align: left;
+                            font-size: 13px;
+                            ul{
+                                li{
+                                    padding: 0 15px;
+                                    color: #333;
+                                    @include border(0 0 1px 0, #999, solid);
+                                    line-height: 44px;
+                                    height: 44px;
+                                    background: white;
+                                }
+                                li:first-child{
+                                    padding: 0 15px;
+                                    color: #333;
+                                    @include border(0 0 1px 0, #999, solid);
+                                    line-height: 44px;
+                                    height: 44px;
+                                    background: white;
+                                    font-size: 13px;
+                                }
+                            }
+                        }
+                    }
+                }
+                
+                .shopSortSort{
+                    width: 100%;
+                    height: 100%;
+                    p{
+                        height: .44rem;
+                        color: black;
+                        font-size: 16px;
+                        line-height: .44rem;
+                        text-align: center;
+                        font-weight: 400;
+                        @include border(0 0 1px 0, #999, solid);
+                    }
+                    .shopSortType{
+                        padding-left: 10px;
+                        height: 39px;
+                        background-color: #f2f2f2;
+                        font-size: 13px;
+                        color: #333;
+                        line-height: 39px;
+                    }
+                    ul{
+                        overflow: hidden;
+                        text-align: left;
+                        padding-left: 10px;
+                        width: 100%;
+                        li{
+                            width: 33.333%;
+                            height: 44px;
+                            font-size: 12px;
+                            color: #333;
+                            float: left;
+                            text-align: left;
+                            line-height: 44px;
+                        }
+                    }
+                }
+                .shopSortFilter{
+                    width: 100%;
+                    height: 100%;
+                    position: absolute;
+                    z-index: 104;
+                    background: white;
+                    @include flexbox();
+                    @include flex-direction(column);
+                    >ul{
+                        
+                        overflow-y: scroll;
+                        @include flex(1);
+                        width: 100%;
+                        >li{
+                            span:nth-child(1){
+                                float: left;
+                                margin-left: 10px;
+                            }
+                            span:nth-child(2){
+                                float: right;
+                                margin-right: 10px;
+                                color: #999;
+                                font-size: 12px;
+                            }
+                            display: block;
+                            
+                            height: .44rem;
+                            font-weight: 400;
+                            font-size: .14rem;
+                            
+                            line-height: .44rem;
+                            >ul{
+                                padding: 0 10px;
+                                @include border(0 0 1px 0, #999, solid);
+                                
+                                width: 100%;
+                                float: left;
+                                >li{
+                                    width: 33.33333%;
+                                    height: 53px;
+                                    float: left;
+                                    p{
+                                        margin: 15px 10px 10px;
+                                        float: left;
+                                        width: calc(100% - 20px);
+                                        font-size: 12px;
+                                        height: 28px;
+                                        line-height: 28px;
+                                        color: #333;
+                                        text-align: center;
+                                        background-color: #f2f2f2;
+                                        border-radius: 4px;
+                                        overflow: hidden;
+                                        text-overflow: ellipsis;
+                                        white-space: nowrap;
+                                    }
+                                }
+                            }
+                        }
+                        >li:nth-child(1){
+                            height: .44rem;
+                            font-weight: 400;
+                            font-size: .14rem;
+                            
+                            line-height: .44rem;
+                        }
+                    }
+                    .shopBtns{
+                        width: 100%;
+                        @include border(1px 0 0 0, #9b885f, solid);
+                        position: absolute;
+                        bottom: 0;
+                        .shopResetBtn{
+                            height: 100%;
+                            width: 50%;
+                            text-align: center;
+                            line-height: 44px;
+                            float: left;
+                            font-size: 18px;
+                            font-weight: 400;
+                            background: white;
+                            color: #9b885f;
+                        }
+                        .shopCheckBtn{
+                            height: 100%;
+                            width: 50%;
+                            text-align: center;
+                            line-height: 44px;
+                            float: left;
+                            font-size: 18px;
+                            font-weight: 400;
+                            background: #9b885f;
+                            color: white;
+                        }
+                    }
+                }
             }
         }
     }

@@ -1,66 +1,40 @@
 <template lang="html">
 	<div class="shopIndexStore">
-		<div class="shop-index-banner">
-			<mt-swipe :auto="1000">
-			  <mt-swipe-item>
-			  	<a href="#">
-			  		<img src="http://img550.5lux.com.cn/2017/10/19/bc/150838149832_1440x520.jpg"/>
-			  	</a>
+		<img src="../assets/images/Star_Ring_loading-01-05.png" class="loading"  v-if="isFinished"/>
+		<div class="shop-index-banner" v-show="!isFinished">
+			<mt-swipe :auto="4000">
+			  <mt-swipe-item v-for="img in imgs">
+			  	
+			  		<img v-lazy="img"/>
+			  
 			  </mt-swipe-item>
-			  <mt-swipe-item>
-			  	<a href="#">
-			  		<img  src="http://img550.5lux.com.cn/2017/10/18/de/150829035724_1440x520.jpg"/>
-			  	</a>
-			  </mt-swipe-item>
-			  <mt-swipe-item>
-			  	<a href="#">
-			  		<img src="http://img550.5lux.com.cn/2017/10/17/wx/150822739672_1440x520.jpg"/>
-			  	</a>
-			  </mt-swipe-item>
-			  <mt-swipe-item>
-			  	<a href="#">
-			  		<img src="http://img550.5lux.com.cn/2017/10/16/pq/150812239219_1440x520.jpg"/>
-			  	</a>
-			  </mt-swipe-item>
-			  <mt-swipe-item>
-			  	<a href="#">
-			  		<img src="http://img550.5lux.com.cn/2017/10/12/de/150777952298_1440x520.jpg"/>
-			  	</a>
-			  </mt-swipe-item>
-			  <mt-swipe-item>
-			  	<a href="#">
-			  		<img src="http://img550.5lux.com.cn/2017/10/11/hi/150769006089_1440x520.jpg"/>
-			  	</a>
-			  </mt-swipe-item>
-			  <mt-swipe-item>
-			  	<a href="#">
-			  		<img src="http://img550.5lux.com.cn/2017/04/18/ef/149247926655_1440x520.jpg"/>
-			  	</a>
-			  </mt-swipe-item>
+			  
+			  
+			  
 			</mt-swipe>
 		</div>
 		<div class="shop-index-sort">
 			<ul>
 				<li>
-					<i class="yo-ico">&#xe65a;</i>
+					<i class="iconfont">&#xe65a;</i>
 					<div>
 						分类
 					</div>
 				</li>
 				<li>
-					<i class="yo-ico">&#xe60e;</i>
+					<i class="iconfont">&#xe60e;</i>
 					<div>
 						专柜自提
 					</div>
 				</li>
 				<li>
-					<i class="yo-ico">&#xe613;</i>
+					<i class="iconfont">&#xe613;</i>
 					<div>
 						会员特权
 					</div>
 					</li>
 				<li>
-					<i class="yo-ico">&#xe623;</i>
+					<i class="iconfont">&#xe623;</i>
 					<div>
 						礼品
 					</div>
@@ -95,6 +69,8 @@
 				dataList: [],
 				dataPro: [],
 				index: 1,
+				isFinished: true,
+				imgs: ["http://img550.5lux.com.cn/2017/10/19/bc/150838149832_1440x520.jpg","http://img550.5lux.com.cn/2017/10/18/de/150829035724_1440x520.jpg","http://img550.5lux.com.cn/2017/10/17/wx/150822739672_1440x520.jpg","http://img550.5lux.com.cn/2017/10/16/pq/150812239219_1440x520.jpg","http://img550.5lux.com.cn/2017/10/12/de/150777952298_1440x520.jpg","http://img550.5lux.com.cn/2017/10/11/hi/150769006089_1440x520.jpg","http://img550.5lux.com.cn/2017/04/18/ef/149247926655_1440x520.jpg"]
 			}
 		},
 		methods: {
@@ -135,9 +111,22 @@
 		        const data = res.data.data
 		        this.dataList = data
 		        this.dataPro = data[this.index-1].store_infos
+		        this.isFinished = false
 		    })
 		}
 	}
 </script>
 
-
+<style type="css" scoped>
+	.loading{
+        width:0.8rem;
+        height:0.8rem;
+        animation:mymove 1s linear infinite;
+        margin-left: 35%; 
+        margin-top: 60%;
+    }
+    @keyframes mymove{
+        from {transform:rotate(0deg)}
+        to {transform:rotate(360deg)}
+    }
+</style>

@@ -12,6 +12,9 @@ import ShopIndexFashion from "../components/ShopIndexFashion.vue";
 import ShopSpecial from "../components/ShopSpecial.vue";
 import nearbyShop from "../components/nearbyShop.vue";
 import hotSearch from "../components/hotSearch.vue";
+import register from "../components/register.vue";
+import myInfo from "../components/myInfo.vue";
+import Cart from "../components/Cart.vue";
 Vue.use(VueRouter);
 export default new VueRouter({
   routes: [
@@ -65,6 +68,16 @@ export default new VueRouter({
 			path:"/hotSearch",
 			component:hotSearch,
 			name:"hotSearch"
+		},{
+			path:"/cart",
+			component:Cart
+		},{
+			path:'/register',
+			component: register
+		
+		},{
+			path:"/myInfo",
+			component: myInfo
 		},
 		{
 			path:"/*",

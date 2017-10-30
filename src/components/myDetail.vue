@@ -166,7 +166,7 @@
 				swiperNum:"",
 				swiperIndex:1,
 				sheetVisible:false,
-				colorsizeVisible:true,
+				colorsizeVisible:false,
 				goods_info:[],
 				banner_adv_info:[],
 				brand_info:[],
@@ -220,7 +220,6 @@
 			},
 			joinShopcar(){
 				var goods_str="";
-				
 				if(this.get("goods_str")!==null){
 					goods_str=this.get("goods_str");
 					var shopCar_goods=JSON.parse(goods_str);
@@ -229,53 +228,59 @@
 				}
 				var that=this;
 //				加入购物车点击,向cookie中存信息
-				var arr=[];
+//				var arr=[];
+				var goods_obj={};
 				if(this.sku_all.length!=0){
 					for(var i=0;i<that.sku_all.length;i++){
 						var name1="parameter"+(i+1)+"_name";
 						var good1=that.sku_all[i].attr_name;
 						var name2="parameter"+(i+1)+"_info";
 						var good2=that.sku_all[i].attr_val[0].attr_value;
-						var goods_obj={};
+						
 						goods_obj.name1=good1;
 						goods_obj.name2=good2;
-						arr.push(goods_obj);
+//						arr.push(goods_obj);
 					}
 				}
-				var goods_infomation=[		
-						{brand_name:that.goods_info.mbpage_title},
-						{good_img:that.swiperList[0].filepath},
-						{good_name:that.goods_info.good_name},
-						{good_price:that.goods_info.product_price},
-						{good_number:that.good_num}					
-				];
-				var newArr=goods_infomation.concat(arr);
+				goods_obj.brand_name=that.goods_info.mbpage_title;
+				goods_obj.good_img=that.swiperList[0].filepath;
+				goods_obj.good_name=that.goods_info.good_name;
+				goods_obj.good_price=that.goods_info.product_price;
+				goods_obj.good_number=that.good_num;
+//				var goods_infomation=[		
+//						{brand_name:that.goods_info.mbpage_title},
+//						{good_img:that.swiperList[0].filepath},
+//						{good_name:that.goods_info.good_name},
+//						{good_price:that.goods_info.product_price},
+//						{good_number:that.good_num}					
+//				];
+//				var newArr=goods_infomation.concat(arr);
 //				console.log(newArr);
 //				console.log(shopCar_goods.length);
 				if(shopCar_goods.length!=0){
 //					shopCar_goods.push(newArr);
 					var index=0;
 					for(var j=0;j<shopCar_goods.length;j++){
-						if(newArr[3].good_price==shopCar_goods[j][3].good_price){
-							var newNum=shopCar_goods[j][4].good_number;
-							newNum+=Number(newArr[4].good_number);
-							shopCar_goods[j][4].good_number=newNum;
+						if(goods_obj.good_price==shopCar_goods[j].good_price){
+							var newNum=shopCar_goods[j].good_number;
+							newNum+=Number(goods_obj.good_number);
+							shopCar_goods[j].good_number=newNum;
 							break;
 						}else{
 							index++;
 							if(index==shopCar_goods.length){
-								shopCar_goods.push(newArr);
+								shopCar_goods.push(goods_obj);
 							}
 						}
-						
 					}
-					
 				}else{
-					shopCar_goods.push(newArr);
+					shopCar_goods.push(goods_obj);
 				}
 				goods_str=JSON.stringify(shopCar_goods);
 				this.set("goods_str",goods_str,30,"/");
 				console.log(JSON.parse(this.get("goods_str")));
+				this.$store.commit("changecartProduct",JSON.parse(this.get("goods_str")));
+				console.log(this.$store.state.cartProduct)
 			}
 		},
 		mounted(){

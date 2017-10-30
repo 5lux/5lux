@@ -29,3 +29,17 @@ img[lazy=error] {
     background:url(../assets/images/good_load.gif) ;
     background-size:100% 100% ;
 }
+@font-face {
+font-family: 'iconfont';
+src: url('../assets/iconfont/more/iconfont.woff') format('woff'), url('../assets/iconfont/more/iconfont.ttf') format('truetype')
+}
+
+@font-face {
+font-family: 'iconfont';
+src: url('../assets/iconfont/addMore/iconfont.woff') format('woff'), url('../assets/iconfont/addMore/iconfont.ttf') format('truetype')
+}
+
+@font-face {
+font-family: 'iconfont';
+src: url('../assets/iconfont/myFaction/iconfont.woff') format('woff'), url('../assets/iconfont/myFaction/iconfont.ttf') format('truetype')
+}

@@ -84,7 +84,7 @@
 				axios.get("http://t1.restful.5lux.com.cn/rpcsearchnew/getkey?pid=2&search="+this.inputMsg)
 				.then((res)=>{
 					this.isSearchresult=true;
-					console.log(res);
+//					console.log(res);
 					if(res.data.data==null||res.data.data.store_info.length==0){
 						this.isHaveno=true;
 						this.isStoreshow=false;

@@ -4,7 +4,7 @@
 			<i class="iconfont">&#xe60b;</i>
 			<input class="search" type="text" placeholder="5LUX.COM" />
 		</div>
-		<div class="headicon"><i class="iconfont">&#xe60c;</i></div>
+		<div class="headicon" @click="goToCart"><i class="iconfont">&#xe60c;</i></div>
 	</div>
 </template>
 <script>
@@ -14,6 +14,11 @@
 		data(){
 			return {
 				
+			}
+		},
+		methods: {
+			goToCart(){
+				this.$router.push('/cart')
 			}
 		}
 	}
