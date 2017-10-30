@@ -25,13 +25,7 @@
 			return {
 				
 			}
-		},
-		props: {
-		  	store_list:{
-		  		type:Array,
-		  		required:true
-		  	}
-	  }
+		}
 	}
 </script>
 

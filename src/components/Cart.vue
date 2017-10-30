@@ -14,19 +14,19 @@
 					您的购物车还没有商品，快去购物吧~~
 				</div>
 				<li v-for="(n,i) in data">
-					<div class="CartCenterTitle iconfont" v-if="data[i].length">YOOX集合店 &#x343c;</div>
+					<div class="CartCenterTitle iconfont" v-if="data[i].length">{{n[i].brand}} &#x343c;</div>
 					<ul>
 						<li v-for="(value,index) in data[i]">
 							<div class="singleSelect iconfont" @click="singleSelect(i,index)" :style="{background: isSelect||allSingleSelect[i][index]?'#9b885f':'white'}">&#xe64d;</div>
 							<img src="../assets/images/150606971460_750x586.jpg"/>
 							<div class="CartCenterimport">
-								<p>SCERVINO</p>
-								<p>SCERVINO</p>
-								<p>铅灰色</p>
-								<p>¥{{price}}</p>
+								<p>{{data[i][index].name}}</p>
+								<p>{{data[i][index].pname}}</p>
+								<p>{{data[i][index].type}}</p>
+								<p>¥{{data[i][index].price}}</p>
 								<div class="CartTodo" v-if="isEdit">
-									<span @click="reduce(i,index)" :style="{color:data[i][index]>1?'black':'#eee'}">-</span>
-									<input type="text" :value="data[i][index]"/>
+									<span @click="reduce(i,index)" :style="{color:data[i][index].num>1?'black':'#eee'}">-</span>
+									<input type="text" :value="data[i][index].num"/>
 									<span @click="add(i,index)">+</span>
 								</div>
 							</div>
@@ -62,10 +62,9 @@
 	export default {
 		data(){
 			return {
-				data: [[1,4,5],[2,4]],
+				data: '',
 				isEdit: true,
 				isSelect: true,
-				price: 1564,
 				allSingleSelect: [],
 				num:0,
 				isEmpty: false,
@@ -73,16 +72,17 @@
 			}
 		},
 		mounted(){
+			this.data = this.$store.state.cartProduct
 			for(var i=0;i<this.data.length;i++){
 				this.allSingleSelect[i]=[]
 				for(var j=0;j<this.data[i].length;j++){
 					this.allSingleSelect[i].push(true)
-					this.num += this.data[i][j]
-					this.sum += (this.data[i][j] * this.price)
+					this.num += Number(this.data[i][j].num)
+					this.sum += Number(this.data[i][j].num) * Number(this.data[i][j].price)
 					
 				}
 			}
-			
+
 		},
 		methods:{
 			back(){
@@ -106,8 +106,8 @@
 						this.allSingleSelect[i]=[]
 						for(var j=0;j<this.data[i].length;j++){
 							this.allSingleSelect[i][j] = true
-							this.num += this.data[i][j]
-							this.sum += (this.data[i][j] * this.price)
+							this.num += Number(this.data[i][j].num)
+							this.sum += Number(this.data[i][j].num) * Number(this.data[i][j].price)
 						}
 					}
 				}
@@ -121,8 +121,8 @@
 						this.allSingleSelect[i]=[]
 						for(var j=0;j<this.data[i].length;j++){
 							this.allSingleSelect[i][j]= true
-							this.num += this.data[i][j]
-							this.sum += (this.data[i][j] * this.price)
+							this.num += Number(this.data[i][j].num)
+							this.sum += Number(this.data[i][j].num) * Number(this.data[i][j].price)
 						}
 					}
 				}else{
@@ -147,8 +147,8 @@
 							flag = false
 						}else{
 							
-							this.num += this.data[i][j]
-							this.sum += (this.data[i][j] * this.price)
+							this.num += Number(this.data[i][j].num)
+							this.sum += Number(this.data[i][j].num) * Number(this.data[i][j].price)
 						}
 						
 					}
@@ -158,20 +158,18 @@
 				this.isSelect = !this.isSelect
 			},
 			reduce(i,j){
-				if(this.data[i][j]<=1){
+				if(Number(this.data[i][j].num)<=1){
 					return 
 				}else{
-					--this.data[i][j]
-					this.num--
-					this.sum -= this.price
+					this.data[i][j].num--
+					this.sum -= Number(this.data[i][j].price)
 				}
 				this.isSelect = !this.isSelect
 				this.isSelect = !this.isSelect
 			},
 			add(i,j){
-				++this.data[i][j]
-				this.num++
-				this.sum += this.price
+				this.data[i][j].num++
+				this.sum += Number(this.data[i][j].price)
 				this.isSelect = !this.isSelect
 				this.isSelect = !this.isSelect
 			},
@@ -193,7 +191,7 @@
 					length = this.data[i].length
 					for(var j=0;j<this.data[i].length;j++){
 						this.allSingleSelect[i][j]=false
-						this.sum += (this.data[i][j]*this.price)
+						this.sum += Number(this.data[i][j].num)*Number(this.data[i][j].price)
 					}
 				}
 				this.isEmpty = true
