@@ -1,0 +1,91 @@
+.arriveWrap{
+    width:100%;
+    height:100%;
+    background: white;
+    @include flexbox();
+    @include flex-direction(column);
+    .arriveHead{
+        width:100%;
+       
+        position: relative;
+        @include flexbox();
+        @include justify-content(center);
+        @include align-items(center);
+        @include border(0px 0px 1px 0px);
+         height:44px;
+        .headList{
+            width:134px;
+            height:28px;
+            @include flexbox();
+//          @include border(1px 1px 1px 1px);
+            border-radius: 4px;
+            border:1px solid black; 
+            li{
+                @include flex();
+                height:100%;
+                text-align: center;
+                line-height:28px;
+            }
+            .liActive{
+                background: black;
+                color:white;
+            }
+        }
+        .iconWrap{
+            width:22px;
+            height:22px;
+            text-align: center;
+            line-height: 22px;
+            font-size:20px;
+        }
+        .iconLeft{
+            position: absolute;
+            right:50px;
+            top:11px;
+        }
+        .iconRight{
+            position: absolute;
+            top:11px;
+            right:25px;
+            p{
+                width:12px;
+                height:12px;
+                font-size:12px;
+                border-radius:50%;
+                background: red;
+                color:white;
+                line-height:12px;
+                position: absolute;
+                right:0px;
+                top:0px;
+            }
+        }
+    }
+    .arriveMenu{
+        width:100%;
+        height:44px;
+//      border-bottom: 1px solid black;
+        @include border(0px 0px 1px 0px);
+        .arrmenuList{
+            width:100%;
+            height:44px;
+            @include flexbox();
+            li{
+                @include flex();
+                text-align: center;
+                line-height:44px;
+                @include ellipsis(100px,1);
+                span{
+                    font-size:12px;
+                    font-weight:bold;
+                    padding-left:3px;
+                }
+                
+                
+            }
+        }
+        
+        
+    }
+    
+}

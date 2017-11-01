@@ -1,0 +1,46 @@
+
+    .myHeader{
+        width:100%;
+        height:44px;
+        position: fixed;
+        left:0px;
+        top:50px;
+        z-index:100;
+        color:white;
+        font-size:12px;
+        .headsearch{
+                width:2.48rem;
+                height:30px;
+                line-height:30px;
+                float:left;
+                margin:7px 0.16rem 0;
+                background: rgba(255,255,255,0.4);
+                @include border-radius(3px);
+                .iconfont{
+                    float:left;
+                    width:0.3rem;
+                    height:30px;
+                    text-align: center;
+                    line-height:30px;
+                }
+                .search{
+                    float:left;
+                    width:2.18rem;
+                    border:0;
+                    outline:none;
+                    text-indent:12px;
+                    background: transparent;
+                   
+                }
+                
+            }
+            .headicon{
+                width:30px;
+                height:30px;
+                float:left;
+                text-align: center;
+                line-height:30px;
+                margin-top:7px;
+                font-size:20px;
+            }
+    }

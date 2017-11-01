@@ -1,5 +1,21 @@
-@import "./yo/base.scss";
-@import "./yo/variables.scss";
-@import "./yo/reset.scss";
-@import "./yo/classes.scss";
+@import "./usage/core/reset.scss";
 
+@import "../modules/common.scss";
+@import "../modules/Index.scss";
+@import "../modules/mySearch.scss";
+
+@import "../modules/myGoshop.scss";
+@import "../modules/shopList.scss";
+@import "../modules/areaList.scss";
+
+@import "../modules/myMall.scss";
+@import "../modules/shopIndexFashion.scss";
+@import "../modules/shopIndex.scss";
+@import "../modules/shopSpecial.scss";
+@import "../modules/nearbyShop.scss";
+@import "../modules/hotSearch.scss";
+@import "../modules/myDetail.scss";
+@import "../modules/cart.scss";
+@import "../modules/Mine.scss";
+@import "../modules/register.scss";
+@import "../modules/myFaction.scss";

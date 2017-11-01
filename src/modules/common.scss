@@ -1,0 +1,45 @@
+body,html{
+    font-size:31.25vw;
+//  background: white;
+}
+#App{
+    width:100%;
+    height:100%;
+}
+ @font-face {
+  font-family: 'iconfont';
+src: url('../assets/iconfont/iconfont.woff') format('woff'), url('../assets/iconfont/iconfont.ttf') format('truetype')
+}
+.iconfont{
+  font-family:"iconfont" !important;
+  font-size:16px;font-style:normal;
+  -webkit-font-smoothing: antialiased;
+  -webkit-text-stroke-width: 0.2px;
+  -moz-osx-font-smoothing: grayscale;
+}
+img[lazy=loading] {
+    width: 100%;
+    height: 100%;
+    background:url(../assets/images/good_load.gif) ;
+    background-size:100% 100% ;
+}
+img[lazy=error] {
+    width: 100%;
+    height: 100%;
+    background:url(../assets/images/good_load.gif) ;
+    background-size:100% 100% ;
+}
+@font-face {
+font-family: 'iconfont';
+src: url('../assets/iconfont/more/iconfont.woff') format('woff'), url('../assets/iconfont/more/iconfont.ttf') format('truetype')
+}
+
+@font-face {
+font-family: 'iconfont';
+src: url('../assets/iconfont/addMore/iconfont.woff') format('woff'), url('../assets/iconfont/addMore/iconfont.ttf') format('truetype')
+}
+
+@font-face {
+font-family: 'iconfont';
+src: url('../assets/iconfont/myFaction/iconfont.woff') format('woff'), url('../assets/iconfont/myFaction/iconfont.ttf') format('truetype')
+}

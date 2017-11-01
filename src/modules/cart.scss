@@ -1,0 +1,159 @@
+.Cart{
+    @include flexbox();
+    @include flex-direction(column);
+    width: 100%;
+    height: 100%;
+    .CartHead{
+        width: 100%;
+        height: .44rem;
+        @include border(0 0 1px 0, '#9b885f', solid);
+        font-size: 16px;
+        text-align: center;
+        background: white;
+        line-height: .44rem;
+        position: relative;
+    }
+    
+    .CartCenter{
+        @include flex(1);
+        width: 100%;
+        background: #eee;
+        overflow: scroll;
+        .CartCenterSection{
+            >li{
+                margin-top: 13px;
+                background: white;
+                .CartCenterTitle{
+                    height: 42px;
+                    background: white;
+                    @include border(1px 0 1px 0, #eee, solid);
+                    font-size: 12px;
+                    color: #666;
+                    padding-top: 15px;
+                    padding-left: 15px;
+                }
+                >ul{
+                    >li{
+                        width: 100%;
+                        height: 110px;
+                        @include border(1px 0 1px 0, #eee, solid);
+                        position: relative;
+                        .singleSelect{
+                            text-align: center;
+                            width: 22px;
+                            height: 22px;
+                            border-radius: 50%;
+                            border: 1px solid #9b885f;
+                            color: white;
+                            float: left;
+                            margin: 44px 8px 0 15px;
+                        }
+                        img{
+                            width: 70px;
+                            height: 90px;
+                            float: left;
+                            margin: 10px;
+                        }
+                        .CartCenterimport{
+                            float: right;
+                            width: 185px;
+                            height: 90px;
+                            padding-left: 10px;
+                            padding-right: 15px;
+                            margin-top: 10px;
+                            position: relative;
+                            p{
+                                font-size: 12px;
+                                width: 100%;
+                                overflow: hidden;
+                                text-overflow: ellipsis;
+                                white-space: nowrap;
+                            }
+                            p:nth-of-type(3){
+                                color: #999;
+                                margin-bottom: 15px;
+                            }
+                            p:nth-of-type(4){
+                                font-size: 13px;
+                                color: #9b885f;
+                            }
+                            .CartTodo{
+                                position: absolute;
+                                right: 15px;
+                                bottom: 0;
+                                width: 90px;
+                                height: 24px;
+                                span{
+                                    float: left;
+                                    width: 24px;
+                                    height: 24px;
+                                    line-height:24px;
+                                    font-size: 24px;
+                                    text-align: center;
+                                    @include border(1px, #999, solid);
+                                }
+                                input{
+                                    float: left;
+                                    width: 42px;
+                                    height: 24px;
+                                    text-align: center;
+                                    font-size: 12px;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            .CartIsEmpty{
+                text-align: center;
+                font-size: 18px;
+                width: 200px;
+                margin: 0 auto;
+                margin-top: 100px;
+            }
+        }
+    }
+    
+    .CartFooter{
+        width: 100%;
+        height: 60px;
+        bottom: 0;
+        background: white;
+        @include border(1px 0 0 0, #999, solid);
+        >span{
+            font-size: 14px;
+            float: left;
+            line-height: 60px;
+        }
+        .productNum{
+            float: left;
+            margin-left: 20px;
+            margin-top: 13px;
+            height: 34px;
+            width: 90px;
+            p:nth-of-type(1){
+                font-family: Arial-Regular;
+                font-size: 13px;
+                color: #9b885f;
+            }
+            p:nth-of-type(2){
+                margin-top: 0;
+                font-size: 12px;
+                color: #00000f;
+            }
+        }
+        .resultBtn{
+            float: right;
+            width: 115px;
+            height: 40px;
+            border-radius: 4px;
+            margin-top: 10px;
+            color: #fff;   
+            font-size: 15px;
+            margin-right: 15px;
+            text-align: center;
+            line-height: 40px; 
+            background: #9b885f;
+        }
+    }
+}

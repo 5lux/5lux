@@ -1,0 +1,71 @@
+
+.shop-m-index {
+    @include flexbox();
+    @include flex-direction(column);
+    height: 100%;
+    width: 100%;
+    font-size: 31.25vw;
+    .shop-index-head{
+        width: 100%;
+        height: .44em;
+        background: black;
+        overflow: auto;
+    }
+    .shop-index-nav {
+        height: 39px;
+        overflow-x: scroll;
+        background: white;
+        ul{
+                
+            @include flexbox()
+            width: 8em;
+            height: 39px;
+            li{
+                @include flex(1,row);
+                font-size: 15px;
+                line-height: 39px;
+                height: 39px;
+                margin-right: 25px;
+                color: #7e8c8d;
+                text-align: center;
+            }
+            li:nth-child(1){
+                margin-left:25px ;
+                    
+            }
+        }
+        
+    }
+    section {
+        width: 100%;
+        overflow-y: scroll;
+        overflow-x: auto;
+        /*flex: 1;*/
+        @include flex(1,column);
+        
+        
+    }
+    
+    .shop-index-foot {
+        width: 100%;
+        height: .44em;
+        background: black;
+    }
+    .sisBanner{
+        .mint-swipe{
+            
+            .mint-swipe-indicators{
+                bottom: -20px;
+            }
+        }
+        .mint-swipe-indicator{
+            border: 1px solid #fff;
+        }
+    }
+}
+
+.is-active{
+    background: white;
+    opacity: 1;
+}
+
